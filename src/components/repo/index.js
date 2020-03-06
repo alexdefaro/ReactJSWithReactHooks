@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 import api from "../../services/api";
-
-import "./styles.css";
+import RepoData from "../repodata";
 
 export default class Repo extends Component {
     state = {
@@ -24,13 +23,11 @@ export default class Repo extends Component {
         const { repo } = this.state;
 
         return (
-            <div className="product-info">
-                <article key={ repo.id }>
-                    <strong>{ repo.name }</strong>
-                    <p>{ repo.description }</p>
-                    <a href={ repo.html_url } target="new">Access</a>
-                </article>
-                <Link to={ '/repos' }>Voltar</Link>
+            <div>
+                <RepoData repoInfo= { repo } linkToGit= { true }  ></RepoData> 
+                <div className="footer">
+                    <Link to={ '/repos' }>Voltar</Link>
+                </div>
             </div>
         )
     }

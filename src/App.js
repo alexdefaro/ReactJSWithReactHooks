@@ -7,7 +7,7 @@ import './styles.css'
 
 const App = () => {
     return (
-        <div className="App">
+        <div className="App">.
             <Header />
             <Routes />
         </div>
